@@ -1,0 +1,22 @@
+package di_p;
+
+public class ThreeBicycle {
+	String wheel, handle;
+
+	public String getWheel() {
+		return wheel;
+	}
+
+	public void setWheel(String wheel) {
+		this.wheel = wheel;
+	}
+
+	public String getHandle() {
+		return handle;
+	}
+
+	public void setHandle(String handle) {
+		this.handle = handle;
+	} 
+	
+}

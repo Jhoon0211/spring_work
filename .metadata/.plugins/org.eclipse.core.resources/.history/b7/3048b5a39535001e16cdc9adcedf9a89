@@ -1,0 +1,17 @@
+package di_p;
+
+public class HandPhone {
+	String name;
+	Camera cam;
+	
+	@Override
+	public String toString() {
+		return "HandPhone [name=" + name + ", cam=" + cam + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+				+ ", toString()=" + super.toString() + "]";
+	}
+}
+
+class Camera{
+	String name;
+	int pixel;
+}

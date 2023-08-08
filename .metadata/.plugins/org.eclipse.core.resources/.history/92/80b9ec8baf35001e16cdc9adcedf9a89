@@ -1,0 +1,33 @@
+package di_p;
+
+public class Bicycle {
+	String name;
+	ThreeBicycle tb;
+	PocariBicycle pb;
+	MtbBicycle mb;
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Three getTb() {
+		return tb;
+	}
+	public void setTb(Three tb) {
+		this.tb = tb;
+	}
+	public Pocari getPb() {
+		return pb;
+	}
+	public void setPb(Pocari pb) {
+		this.pb = pb;
+	}
+	public Mtb getMb() {
+		return mb;
+	}
+	public void setMb(Mtb mb) {
+		this.mb = mb;
+	}
+}

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.springframework.org/schema/beans"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	
+	<bean class="di_p.HandPhone" name="hp2">
+			<property name="name">
+				 <!--문자열 가져올 때 
+				<value>어른폰</value>
+			</property>
+			<property name="cam">
+				<value>cam2</value>
+				<ref>*/
+					<bean>cam2</bean>
+				</ref>
+				
+				 참조 할 때 -->
+				<ref bean="cam2" />
+	
+			</property>
+			
+			
+		</property>
+	</bean>-->
+	
+	<bean class="di_p.Camera" name="cam2">
+		<property name="name" value="후방카메라" />
+		<property name="pixel" value="2000" />
+	</bean>
+	
+	<bean class="di_p.Camera" name="cam3">
+		<constructor-arg>
+			<value>광학카메라</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>1234</value>
+		</constructor-arg>
+	</bean>
+	
+	<!--<bean class="di_p.Camera" name="cam4">
+		<constructor-arg value="9999" />
+		<constructor-arg value="적외선카메라" />
+	</bean>-->
+	
+	<bean class="di_p.Camera" name="cam5">
+		<constructor-arg value="9999" />
+		<constructor-arg value="적외선카메라" />
+	</bean>
+</beans>	
+<!--<bean class="di_p.Bicycle" name="bc2">
+	<property name="three">
+		<value>세발자전거</value>
+	</property>
+	<property name="wheel">
+		<ref bean="wheel1" />
+	</property>	
+	<property name="handle">
+		<ref bean="handle1" />
+	</property>		
+</bean>
+
+<bean class="di_p.Wheel" name="wheel1">
+	<property name="firstWheel" value="바퀴1" />
+	<property name="secondWheel" value="바퀴2" />
+	<property name="thirdWheel" value="바퀴3" />
+</bean>
+<bean class="di_p.Handle" name="handle1">
+	<property name="name" value="핸들" />
+</bean>
+-->
+
