@@ -1,0 +1,22 @@
+package di_p;
+
+import java.util.Arrays;
+
+public class Student {
+	String name;
+	int[] arr;
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setArr(int[] arr) {
+		this.arr = arr;
+	}
+	
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", arr=" + Arrays.toString(arr) + "]";
+	}
+	
+	
+}

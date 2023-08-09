@@ -1,7 +1,0 @@
-package di_p;
-
-public class Bicycle {
-	String wheel, handle;
- 
-	
-}

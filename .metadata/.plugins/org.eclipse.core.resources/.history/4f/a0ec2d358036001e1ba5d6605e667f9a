@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.springframework.org/schema/beans"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+			
+	<bean class="di_p.Exam" name="scores">	
+		<constructor-arg ref="kor"/>
+	    <constructor-arg ref="eng"/>
+	    <constructor-arg ref="math"/>
+	</bean>
+	
+	
+	<!-- 국어점수 -->
+	<bean class="di_p.Korea" name="ks">
+		<property name="name" value="국어점수"/>
+		<property name="korScr">
+			<array>
+				<value>90</value>
+				<value>80</value>
+				<value>70</value>
+			</array>
+		</property>
+	</bean>
+	
+	<!-- 영어점수 -->
+	<bean class="di_p.English" name="es">
+		<property name="name" value="영어점수"/>
+		<property name="engScr">
+			<array>
+				<value>70</value>
+				<value>80</value>
+				<value>90</value>
+			</array>
+		</property>
+	</bean>
+	
+	<!-- 수학점수 -->
+	<bean class="di_p.Math" name="ms">
+		<property name="name" value="수학점수"/>
+		<property name="mathScr">
+			<array>
+				<value>60</value>
+				<value>90</value>
+				<value>80</value>
+			</array>
+		</property>
+	</bean>
+
+	<!-- 학생 생성 -->
+	<!--<bean class="di_p.Exam" name="st1">
+		<property name="name"  value="안재훈"/>
+		<property name="kor"  value="95"/>
+		<property name="eng"  value="89"/>
+		<property name="mat"  value="79"/>
+	</bean>
+	
+	<bean class="di_p.Exam" name="st2">
+		<property name="name"  value="밖재훈"/>
+		<property name="kor"  value="80"/>
+		<property name="eng"  value="87"/>
+		<property name="mat"  value="68"/>
+	</bean>
+	
+	<bean class="di_p.Exam" name="st3">
+		<property name="name"  value="속재훈"/>
+		<property name="kor"  value="100"/>
+		<property name="eng"  value="90"/>
+		<property name="mat"  value="40"/>
+	</bean>
+	
+	<bean class="di_p.Exam" name="st4">
+		<property name="name"  value="겉재훈"/>
+		<property name="kor"  value="57"/>
+		<property name="eng"  value="67"/>
+		<property name="mat"  value="98"/>
+	</bean>-->
+</beans>

@@ -1,0 +1,10 @@
+package di_p;
+
+public class Exam {
+	String name;
+}
+
+class Korea{
+	String name;
+	int scr;
+}

@@ -1,0 +1,49 @@
+package di_p;
+
+import java.util.Arrays;
+
+public class Student {
+	String name;
+	int[] arr1, arr2, arr3;
+	int tot, avg;
+	
+	public String getName() {
+		return name;
+	}
+	public int[] getArr() {
+		return arr;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setArr(int[] arr) {
+		this.arr = arr;
+	}
+	
+	public int getTot() {
+		return tot;
+	}
+	public void setTot(int tot) {
+		this.tot = tot;
+	}
+	public int getAvg() {
+		return avg;
+	}
+	public void setAvg(int avg) {
+		this.avg = avg;
+	}
+
+	public Student(String name, int[] arr, int tot, int avg) {
+		super();
+		this.name = name;
+		this.arr = arr;
+		this.tot = tot;
+		this.avg = avg;
+	}
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", arr=" + Arrays.toString(arr) + ", tot=" + tot + ", avg=" + avg + "]";
+	}
+	
+	
+}

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.springframework.org/schema/beans"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean class="java.util.ArrayList" name="arr1">
+		<constructor-arg>
+			<list>
+				<value>아기상어</value>
+				<value>뚜루루뚜루</value>
+				<value>귀여운</value>
+				<value>뚜루루뚜루</value>
+				<value>바닷속</value>
+				<value>아기상어</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<!-- 중복 불가, 순서 보장 x -->
+	<bean class="java.util.HashSet" name="ss1">
+		<constructor-arg>
+			<list>
+				<value>아기상어</value>
+				<value>뚜루루뚜루</value>
+				<value>귀여운</value>
+				<value>뚜루루뚜루</value>
+				<value>바닷속</value>
+				<value>아기상어</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<!-- 중복 불가, 순서 보장 o -->
+	<bean class="java.util.LinkedHashSet" name="ss2">
+		<constructor-arg>
+			<list>
+				<value>아기상어</value>
+				<value>뚜루루뚜루</value>
+				<value>귀여운</value>
+				<value>뚜루루뚜루</value>
+				<value>바닷속</value>
+				<value>아기상어</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<!-- value값 중복 허용, key값 중복 불허 -->
+	<bean class="java.util.HashMap" name="map1">
+		<constructor-arg>
+			<map>
+				<entry>
+					<key><value>아기상어</value></key>
+					<value>어류</value>
+				</entry>
+				<entry>
+					<key><value>악어</value></key>
+					<value>파충류</value>
+				</entry>
+				<entry>
+					<key><value>티라노</value></key>
+					<value>파충류</value>
+				</entry>
+				<entry>
+					<key><value>아기상어</value></key>
+					<value>1심방1심실</value>
+				</entry>
+				<entry>
+					<key><value>켄신</value></key>
+					<value>비천어검류</value>
+				</entry>
+			</map>
+		</constructor-arg>
+	</bean>
+	<!-- Array는 등록 불가 -->
+	<!--<bean class="java.util.String []" name="arr3">
+		<constructor-arg>
+			<array>
+				<value>아기상어</value>
+				<value>뚜루루뚜루</value>
+				<value>귀여운</value>
+				<value>뚜루루뚜루</value>
+				<value>바닷속</value>
+				<value>아기상어</value>
+			</array>	
+		</constructor-arg>
+	</bean>-->
+	<bean class="java.util.LinkedHashSet" name="ss2">
+		<constructor-arg>
+			<list>
+				<value>아기상어</value>
+				<value>뚜루루뚜루</value>
+				<value>귀여운</value>
+				<value>뚜루루뚜루</value>
+				<value>바닷속</value>
+				<value>아기상어</value>
+			</list>
+		</constructor-arg>
+	</bean>
+</beans>

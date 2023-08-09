@@ -1,0 +1,14 @@
+package di_p.main;
+
+import java.util.LinkedList;
+
+public class DIColl {
+	String nick;
+	int age;
+	
+	int [] arr;
+
+	LinkedList arr2;
+	
+	Set<>
+}

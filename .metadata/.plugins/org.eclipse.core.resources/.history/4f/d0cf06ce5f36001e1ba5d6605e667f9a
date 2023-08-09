@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.springframework.org/schema/beans"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean class="java.util.ArrayList" name="arr1">
+		<constructor-arg>
+			<list>
+				<value>아기상어</value>
+				<value>뚜루루뚜루</value>
+				<value>귀여운</value>
+				<value>뚜루루뚜루</value>
+				<value>바닷속</value>
+				<value>아기상어</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<!-- 중복 불가, 순서 보장 x -->
+	<bean class="java.util.HashSet" name="ss1">
+		<constructor-arg>
+			<list>
+				<value>아기상어</value>
+				<value>뚜루루뚜루</value>
+				<value>귀여운</value>
+				<value>뚜루루뚜루</value>
+				<value>바닷속</value>
+				<value>아기상어</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<!-- 중복 불가, 순서 보장 o -->
+	<bean class="java.util.LinkedHashSet" name="ss2">
+		<constructor-arg>
+			<list>
+				<value>아기상어</value>
+				<value>뚜루루뚜루</value>
+				<value>귀여운</value>
+				<value>뚜루루뚜루</value>
+				<value>바닷속</value>
+				<value>아기상어</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<bean class="java.util.HashMap" name="map1">
+		<constructor-arg>
+			<map>
+				<entry>
+					<key></key>
+					<key></key>
+				</entry>
+				<value>아기상어</value>
+				<value>뚜루루뚜루</value>
+				<value>귀여운</value>
+				<value>뚜루루뚜루</value>
+				<value>바닷속</value>
+				<value>아기상어</value>
+			</map>
+		</constructor-arg>
+	</bean>
+</beans>

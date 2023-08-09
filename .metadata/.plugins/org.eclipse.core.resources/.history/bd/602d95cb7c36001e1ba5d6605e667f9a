@@ -1,0 +1,25 @@
+package di_p.main;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import di_p.Exam;
+
+public class Exam_main {
+
+	public static void main(String[] args) {
+		
+		AbstractApplicationContext context =
+				new ClassPathXmlApplicationContext("di_xml/Exam.xml");
+		
+		Exam scores = context.getBean("scores",Exam.class);
+		System.out.println(scores);
+
+
+		//Exam st1 = context.getBean("st1",Exam.class);
+		//System.out.println(st1.arr);
+		//System.out.println(st1.arr1);
+		
+	}
+
+}

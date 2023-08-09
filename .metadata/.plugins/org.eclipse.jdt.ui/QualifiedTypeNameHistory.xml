@@ -1,2 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="di_p.HandPhone"/>
+    <fullyQualifiedTypeName name="di_p.Camera"/>
+    <fullyQualifiedTypeName name="java.lang.AbstractMethodError"/>
+    <fullyQualifiedTypeName name="org.springframework.context.support.AbstractApplicationContext"/>
+    <fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
+    <fullyQualifiedTypeName name="di_p.PocariBicycle"/>
+    <fullyQualifiedTypeName name="di_p.MTBBicycle"/>
+    <fullyQualifiedTypeName name="di_p.ThreeBicycle"/>
+    <fullyQualifiedTypeName name="di_p.Blanket"/>
+    <fullyQualifiedTypeName name="di_p.Bicycle"/>
+    <fullyQualifiedTypeName name="di_p.Wheel"/>
+    <fullyQualifiedTypeName name="di_p.Handle"/>
+    <fullyQualifiedTypeName name="di_p.Basket"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,105 @@
+package di_p;
+
+import java.util.Arrays;
+
+public class Exam {
+	String name;
+	Student student;
+	Korea korea;
+	English english;
+	Math math;
+	//Total tot;
+	//Average avg;
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setKor(Korea kor) {
+		this.kor = kor;
+	}
+	public void setEng(English eng) {
+		this.eng = eng;
+	}
+	public void setMath(Math math) {
+		this.math = math;
+	}
+	public Exam(String name, Korea kor, English eng, Math math) {
+		super();
+		this.name = name;
+		this.kor = kor;
+		this.eng = eng;
+		this.math = math;
+	}
+	@Override
+	public String toString() {
+		return "Exam [name=" + name + ", kor=" + kor + ", eng=" + eng + ", math=" + math + "]";
+	}
+	
+	// 학생 점수 배열
+	//int [] arr, arr1, arr2, arr3;
+	// 총점, 평균
+	//int tot, avg;
+
+	
+
+}
+class Student{
+	String name;
+}
+
+
+class Korea{
+	String name;
+	int [] korScr;
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setScr(int[] korScr) {
+		this.korScr = korScr;
+	}
+	
+	@Override
+	public String toString() {
+		return "Korea [name=" + name + ", korScr=" + korScr + "]";
+	}
+
+}
+
+class English{
+	String name;
+	int [] engScr;
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public void setEng(int[] engScr) {
+		this.engScr = engScr;
+	}
+
+	
+	@Override
+	public String toString() {
+		return "English [name=" + name + ", engScr=" + engScr + "]";
+	}
+
+	
+}
+
+class Math{
+	String name;
+	int [] mathScr;
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setScr(int[] mathScr) {
+		this.mathScr = mathScr;
+	}
+	
+	@Override
+	public String toString() {
+		return "Math [name=" + name + ", mathScr=" + mathScr + "]";
+	}
+	
+}
