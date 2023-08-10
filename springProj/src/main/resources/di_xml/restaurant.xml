@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	
+	<!-- restaurant -->
+	<bean class="di_p.Rest" name="menu">
+		<lookup-method name="comeon_morning" bean="brk" /> 
+		<lookup-method name="comeon_noon" bean="lun" />
+		<lookup-method name="comeon_dinner" bean="din" /> 
+	</bean>
+	
+</beans>

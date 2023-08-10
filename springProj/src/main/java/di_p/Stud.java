@@ -42,7 +42,5 @@ public class Stud implements Comparable<Stud>{
 			res = name.compareTo(you.name);
 		}
 		return res;
-	}
-	
-	
+	}	
 }

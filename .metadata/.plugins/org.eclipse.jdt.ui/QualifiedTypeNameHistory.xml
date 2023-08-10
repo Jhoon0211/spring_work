@@ -3,8 +3,6 @@
     <fullyQualifiedTypeName name="di_p.HandPhone"/>
     <fullyQualifiedTypeName name="di_p.Camera"/>
     <fullyQualifiedTypeName name="java.lang.AbstractMethodError"/>
-    <fullyQualifiedTypeName name="org.springframework.context.support.AbstractApplicationContext"/>
-    <fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
     <fullyQualifiedTypeName name="di_p.PocariBicycle"/>
     <fullyQualifiedTypeName name="di_p.MTBBicycle"/>
     <fullyQualifiedTypeName name="di_p.ThreeBicycle"/>
@@ -13,4 +11,17 @@
     <fullyQualifiedTypeName name="di_p.Wheel"/>
     <fullyQualifiedTypeName name="di_p.Handle"/>
     <fullyQualifiedTypeName name="di_p.Basket"/>
+    <fullyQualifiedTypeName name="org.springframework.context.support.AbstractApplicationContext"/>
+    <fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="java.util.LinkedHashSet"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="di_p.Exam"/>
+    <fullyQualifiedTypeName name="di_p.Student"/>
 </qualifiedTypeNameHistroy>

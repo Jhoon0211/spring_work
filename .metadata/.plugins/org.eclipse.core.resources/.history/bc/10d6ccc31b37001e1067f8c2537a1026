@@ -1,0 +1,13 @@
+package di_p;
+
+public class CoffeeShop {
+	
+	public Coffee order_am() {
+		System.out.println("order_am 실행");
+		return new Coffee("아메리카노", 1400);
+	}
+}
+
+
+	
+}

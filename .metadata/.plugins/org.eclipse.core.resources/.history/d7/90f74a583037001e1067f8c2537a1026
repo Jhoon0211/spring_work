@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.springframework.org/schema/beans"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	
+	<bean class="di_p.AutoCar" name="car1">
+		
+	</bean>	
+	
+	<bean class="di_p.Coffee" name="bo">
+		<constructor-arg value="비오"/> <!-- name -->
+		<constructor-arg value="1004"/> <!-- price -->
+	</bean>	
+</beans>
