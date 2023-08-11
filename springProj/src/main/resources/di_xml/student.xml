@@ -4,7 +4,8 @@ xmlns="http://www.springframework.org/schema/beans"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">	
 		
-	<bean class="di_p.Student" name="std1">
+<bean class="di_p.StudBeanPostProcessor"/>	
+	<bean class="di_p.Student" name="red">
 		<constructor-arg name="name" value="안재훈"/>
 		<constructor-arg name="arr">
 			<array>
@@ -14,7 +15,7 @@ https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 			</array>
 		</constructor-arg>
 	</bean>	
-	<bean class="di_p.Student" name="std2">
+	<bean class="di_p.Student" name="blue">
 		<constructor-arg name="name" value="밖재훈"/>
 		<constructor-arg name="arr">
 			<array>
@@ -24,7 +25,7 @@ https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 			</array>
 		</constructor-arg>
 	</bean>	
-	<bean class="di_p.Student" name="std3">
+	<bean class="di_p.Student" name="yellow">
 		<constructor-arg name="name" value="겉재훈"/>
 		<constructor-arg name="arr">
 			<array>
@@ -34,14 +35,5 @@ https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 			</array>
 		</constructor-arg>
 	</bean>	
-	<bean class="di_p.Student" name="std4">
-		<constructor-arg name="name" value="속재훈"/>
-		<constructor-arg name="arr">
-			<array>
-				<value>50</value>
-				<value>80</value>
-				<value>70</value>
-			</array>
-		</constructor-arg>
-	</bean>	
+<bean class="di_p.StudBeanFactoryPostProcessor"/>
 </beans>

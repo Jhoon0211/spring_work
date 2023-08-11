@@ -1,0 +1,68 @@
+package anno_p;
+
+public class Coffee {
+	String name;
+	int price;
+	Shot shot;
+	Syrup syrup;
+	Milk milk;
+	Chocolate chocolate;
+	
+}
+
+class Shot{
+	String name;
+	int times;
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setTimes(int times) {
+		this.times = times;
+	}
+	
+	
+}
+
+
+class Syrup{
+	String name;
+	int times;
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setTimes(int times) {
+		this.times = times;
+	}
+	
+	
+}
+
+class Milk{
+	String name;
+	int liter;
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setLiter(int liter) {
+		this.liter = liter;
+	}
+	
+	
+}
+
+class Chocolate{
+	String name;
+	int gram;
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setGram(int gram) {
+		this.gram = gram;
+	}
+	
+	
+}

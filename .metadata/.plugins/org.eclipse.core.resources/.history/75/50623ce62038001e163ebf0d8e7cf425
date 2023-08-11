@@ -1,0 +1,43 @@
+package anno_p;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+public class Coffee {
+	@Qualifier("bs1")
+	String name;
+	Americano ame;
+	Vanilla van;
+	Latte lat;
+	Moca moc;
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
+}
+
+
+
+
+class Americano{
+	String name;
+	int price, shot;
+	
+}
+
+class Vanilla{
+	
+	
+}
+
+class Latte{
+	
+	
+	
+}
+
+class Moca{
+	
+}

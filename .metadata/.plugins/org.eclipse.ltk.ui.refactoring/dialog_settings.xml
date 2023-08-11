@@ -13,4 +13,12 @@
 		<item key="moveWizard.updateQualifiedNames" value="false"/>
 		<item key="patterns" value="*"/>
 	</section>
+	<section name="RefactoringWizard.Externalize strings in &apos;AutoCar.java&apos;">
+		<item key="width" value="600"/>
+		<item key="height" value="400"/>
+	</section>
+	<section name="RefactoringWizard.Externalize strings in &apos;phone.java&apos;">
+		<item key="width" value="600"/>
+		<item key="height" value="400"/>
+	</section>
 </section>

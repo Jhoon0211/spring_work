@@ -1,0 +1,100 @@
+package anno_p;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
+public class Coffee {
+	//@Autowired(required=false)
+	@Qualifier("sr1")
+	String name;
+	int price, shot;
+	
+	//@Autowired(required=false)
+	Syrup syrup;
+	Milk milk;
+	Chocolate chocolate;
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	public void setShot(int shot) {
+		this.shot = shot;
+	}
+	public void setSyrup(Syrup syrup) {
+		this.syrup = syrup;
+	}
+
+	public void setMilk(Milk milk) {
+		this.milk = milk;
+	}
+	public void setChocolate(Chocolate chocolate) {
+		this.chocolate = chocolate;
+	}
+
+	@Override
+	public String toString() {
+		return "Coffee [name=" + name + ", price=" + price + ", shot=" + shot + ", syrup=" + syrup + ", milk=" + milk
+				+ ", chocolate=" + chocolate + "]";
+	}
+	
+}
+
+
+
+
+class Syrup{
+	String name;
+	int times;
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setTimes(int times) {
+		this.times = times;
+	}
+	@Override
+	public String toString() {
+		return "Syrup [name=" + name + ", times=" + times + "]";
+	}
+	
+	
+}
+
+class Milk{
+	String name;
+	int liter;
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setLiter(int liter) {
+		this.liter = liter;
+	}
+	@Override
+	public String toString() {
+		return "Milk [name=" + name + ", liter=" + liter + "]";
+	}
+	
+	
+}
+
+class Chocolate{
+	String name;
+	int gram;
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setGram(int gram) {
+		this.gram = gram;
+	}
+	@Override
+	public String toString() {
+		return "Chocolate [name=" + name + ", gram=" + gram + "]";
+	}
+	
+	
+}

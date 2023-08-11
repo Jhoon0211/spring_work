@@ -1,0 +1,24 @@
+package anno_p.main;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import di_p.CoffeeShop;
+import di_p.Coffee;
+
+public class AutoWire_Main {
+
+	public static void main(String[] args) {
+		
+		// xml 여러개 가져올 수 있음
+		AbstractApplicationContext context =
+				new ClassPathXmlApplicationContext("anno.p_xml/autowire.xml");
+		
+		
+		System.out.println(context.getBean("wm1"));
+		System.out.println(context.getBean("rc1"));
+		
+		context.close();
+
+	}
+}

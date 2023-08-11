@@ -90,4 +90,17 @@
 		<item key="updateSimilarElements" value="false"/>
 		<item key="updateSimilarElementsMatchStrategy" value="1"/>
 	</section>
+	<section name="nls_accessor_history">
+		<section name="0">
+			<item key="accessorName" value="Messages"/>
+			<item key="accessorPackage" value="=springProj/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;di_p"/>
+			<item key="bundleName" value="messages.properties"/>
+			<item key="bundlePackage" value="=springProj/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;di_p"/>
+		</section>
+	</section>
+	<section name="JavaSearchPage">
+		<item key="CASE_SENSITIVE" value="false"/>
+		<item key="INCLUDE_MASK" value="11"/>
+		<item key="HISTORY_SIZE" value="0"/>
+	</section>
 </section>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+http://www.springframework.org/schema/context
+https://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<bean name="bs1" class="anno_p.Coffee" p:name="기본값" 
+	p:price="3000" p:shot="1" />
+	
+	
+	
+	<bean name="sr1" class="anno_p.Syrup" p:name="애기시럽" p:times="20"/>
+	<bean name="sr2" class="anno_p.Syrup" p:name="어른시럽" p:times="2"/>
+	
+	<bean name="mk1" class="anno_p.Milk" p:name="라떼" p:liter="1"/>
+	<!--
+	<bean name="mmm1" class="anno_p.Motor" p:name="블랙라벨" p:power="100"/>
+	<bean name="mmm2" class="anno_p.Motor" p:name="골드라벨" p:power="200"/>
+	<bean name="mt" class="anno_p.Motor" p:name="골든벨" p:power="60"/>
+	
+	<bean name="qwer" class="anno_p.Drum" p:name="통돌이" p:size="10"/>
+	
+	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+	<context:annotation-config />	-->
+	<!-- annotation에 해당하는 것들은 전부 들어감 -->
+	<!-- setMt에 @Autowired 걸어놓은 것 -->
+</beans>

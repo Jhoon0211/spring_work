@@ -1,0 +1,11 @@
+package anno_p;
+
+public class Coffee {
+	String name;
+	int price;
+	CoffeBean coffeebean;
+	Syrup syrup;
+	Milk milk;
+	Chocolate chocolate;
+	
+}

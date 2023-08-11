@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean class="di_p.MyBeanPostProcessor"/>
+	<!-- 합체 -->	
+	<bean class="di_p.Grade" name="점수계산" autowire="byType"
+	p:name="점수계산" p:red-ref="red1" p:blue-ref="blue1" p:yellow-ref="yellow1"/>
+	
+	
+	<!-- RED -->
+	<bean class="di_p.Red" name="red1" p:name="수우미양가점수"
+	p:r1="60" p:r2="50" p:r3="87" p:r4="79" p:r5="91"/>
+	
+	<!-- BLUE -->
+	<bean class="di_p.Blue" name="blue1" p:name="ABCDE점수" 
+	p:r1="60" p:r2="50" p:r3="87" p:r4="79" p:r5="91"/>
+	
+	<!-- YELLOW -->
+	<bean class="di_p.Yellow" name="yellow1" p:name="12345점수" p:price="3000"/>
+
+	<bean class="di_p.MyBeanFactoryPostProcessor"/>
+	
+	
+</beans>

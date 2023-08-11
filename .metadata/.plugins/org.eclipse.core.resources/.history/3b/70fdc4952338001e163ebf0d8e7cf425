@@ -1,0 +1,6 @@
+package anno_p;
+
+public class RCcar {
+	String name;
+	Motor mtr;
+}

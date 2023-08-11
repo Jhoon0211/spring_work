@@ -1,0 +1,23 @@
+package di_p;
+
+public class Grade {
+	Red red;
+	Blue blue;
+	Yellow yellow;
+}
+
+class Red{
+	String name;
+	int r1, r2, r3, r4, r5;
+}
+
+class Blue{
+	String name;
+	int b1, b2, b3, b4, b5;
+	
+}
+
+class Yellow{
+	String name;
+	int y1,y2,y3,y4,y5;
+}
