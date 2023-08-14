@@ -1,0 +1,7 @@
+package anno_p.com.sub2;
+
+public class Monitor {
+	
+	String name="삼성모니터";
+	int size=22;
+}

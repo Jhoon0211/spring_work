@@ -1,0 +1,57 @@
+package anno_p.com;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class CafeMenu {
+	String name;
+	Americano americano;
+	Cafelatte cafelatte;
+	Caramel caramel;
+	
+	@Override
+	public String toString() {
+		return "CafeMenu [name=" + name + ", americano=" + americano + ", cafelatte=" + cafelatte + ", caramel="
+				+ caramel + "]";
+	}
+		
+}
+
+@Component("ame")
+class Americano{
+	String name="아메리카노";
+	int coffeebean=300, water=200, price=3500;
+	@Override
+	public String toString() {
+		return "Americano [name=" + name + ", coffeebean=" + coffeebean + ", water=" + water + ", price=" + price + "]";
+	}
+	
+	
+}
+
+@Component("latte")
+class Cafelatte{
+	String name="카페라떼";
+	int coffeebean=250, milk=250, price=4000;
+	
+	@Override
+	public String toString() {
+		return "Cafelatte [name=" + name + ", coffeebean=" + coffeebean + ", milk=" + milk + ", price=" + price + "]";
+	}
+	
+	
+}
+
+@Component("maki")
+class Caramel{
+	String name="캬라멜마끼야또";
+	int coffeebean=220, syrup=35, milk=230, price=5000;
+	
+	@Override
+	public String toString() {
+		return "Caramel [name=" + name + ", coffeebean=" + coffeebean + ", syrup=" + syrup + ", milk=" + milk
+				+ ", price=" + price + "]";
+	}
+	
+}
+

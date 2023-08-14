@@ -1,0 +1,6 @@
+package anno_p.com;
+
+public class NoteBook {
+	
+	Bonche bc;
+}

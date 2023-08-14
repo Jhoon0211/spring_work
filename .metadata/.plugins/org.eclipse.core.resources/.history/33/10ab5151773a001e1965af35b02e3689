@@ -1,0 +1,8 @@
+package anno_p;
+
+public class AnnoConfig {
+	
+	BiCycle mtb() {
+		
+	}
+}

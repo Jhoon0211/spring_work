@@ -1,0 +1,11 @@
+package anno_p.com;
+
+import anno_p.comabc.Monitor;
+
+public class WorkStation {
+	Bonche bon;
+	
+	Monitor m1, m2;
+	
+	
+}

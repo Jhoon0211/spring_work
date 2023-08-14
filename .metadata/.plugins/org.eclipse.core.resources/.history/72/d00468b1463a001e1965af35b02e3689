@@ -1,0 +1,6 @@
+package anno_p.com;
+
+public interface Cafe {
+	
+	void make();
+}

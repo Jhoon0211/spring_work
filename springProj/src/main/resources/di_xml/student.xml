@@ -4,7 +4,7 @@ xmlns="http://www.springframework.org/schema/beans"
 xsi:schemaLocation="http://www.springframework.org/schema/beans
 https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">	
 		
-<bean class="di_p.StudBeanPostProcessor"/>	
+<bean class="di_p.StudBeanPostProcessor"/>
 	<bean class="di_p.Student" name="red">
 		<constructor-arg name="name" value="안재훈"/>
 		<constructor-arg name="arr">

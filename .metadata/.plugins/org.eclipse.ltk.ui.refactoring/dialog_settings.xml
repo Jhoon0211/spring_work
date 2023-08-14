@@ -21,4 +21,12 @@
 		<item key="width" value="600"/>
 		<item key="height" value="400"/>
 	</section>
+	<section name="RefactoringWizard.Externalize strings in &apos;Grade.java&apos;">
+		<item key="width" value="600"/>
+		<item key="height" value="400"/>
+	</section>
+	<section name="RefactoringWizard.Externalize strings in &apos;Coffee.java&apos;">
+		<item key="width" value="600"/>
+		<item key="height" value="400"/>
+	</section>
 </section>

@@ -1,0 +1,13 @@
+package anno_p;
+
+import org.springframework.context.annotation.Bean;
+
+import anno_p.com.sub1.Mouse;
+
+public class Computers {
+	
+	@Bean
+	Mouse hp920() {
+		return new Mouse("HP920","버티컬");
+	}
+}

@@ -1,0 +1,25 @@
+package anno_p.main;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Component_main {
+
+	public static void main(String[] args) {
+		
+		AbstractApplicationContext context = 
+				new ClassPathXmlApplicationContext("anno_xml/component.xml");
+
+		// bean으로 당길 시에 클래스 명이 bean이름으로 됨
+		// 첫글자 대문자는 소문자로 반드시 바꿔주어야 함
+		// 아직 noteBook안에 mouse가 들어가지는 않았음
+		// noteBook안에 mouse잡아주려면 NoteBook.java의 Mouse클래스에 @Resource 삽입
+		System.out.println(context.getBean("mouse"));
+		System.out.println(context.getBean("noteBook"));
+		
+		context.close();
+		
+				
+	}
+
+}

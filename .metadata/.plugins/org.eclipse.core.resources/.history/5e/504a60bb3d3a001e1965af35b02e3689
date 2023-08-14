@@ -1,0 +1,10 @@
+package anno_p.com;
+
+import anno_p.com.sub1.Mouse;
+
+public class NoteBook {
+	
+	BonChe bc;
+	Mouse mouse;
+	String name = "그램";
+}

@@ -1,0 +1,20 @@
+package anno_p;
+
+public class BiCycle {
+
+}
+
+class BiHandle{
+	String name, type;
+
+	public BiHandle(String name, String type) {
+		super();
+		this.name = name;
+		this.type = type;
+	}
+
+}
+
+class BiWheel{
+	
+}

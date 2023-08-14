@@ -1,0 +1,17 @@
+package anno_p.com;
+
+import org.springframework.stereotype.Component;
+
+@Component
+
+public class BonChe {
+	
+	String name = "삼보트라이젠", cpu="1.33Ghz";
+
+	@Override
+	public String toString() {
+		return "Bonche [name=" + name + ", cpu=" + cpu + "]";
+	}
+
+	
+}

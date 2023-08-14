@@ -1,0 +1,20 @@
+package anno_p.com;
+
+public class CafeMenu {
+	String name;
+	Americano americano;
+	Cafelatte cafelatte;
+	Caramelmaki caramel;
+}
+
+class Americano{
+	String name, coffeebean;
+	int water, price;
+	
+}
+
+class Cafelatte{
+	String name, coffeebean;
+	int water, price;
+	
+}

@@ -1,0 +1,35 @@
+package anno_p;
+
+import org.springframework.context.annotation.Bean;
+
+import anno_p.com.WorkStation;
+import anno_p.com.sub1.Mouse;
+import anno_p.comabc.NoteBook;
+
+public class Computers {
+	
+	// 메소드를 이용하여 bean을 생성
+	@Bean
+	Mouse hp920() {
+		return new Mouse("HP920","버티컬");
+	}
+	
+	@Bean
+	NoteBook gm1() {
+		return new NoteBook();
+	}
+	
+	// 메서드로 hp920 호출
+	@Bean
+	WorkStation ws1() {
+		return new WorkStation("델1", null, null, null, hp920());
+	}
+	
+	// 매개변수로 hp920 호출
+	@Bean
+	WorkStation ws2(Bonche asus, Mouse hp920) {
+		return new WorkStation("델2", null, null, null, hp920);
+	}
+	
+	
+}
