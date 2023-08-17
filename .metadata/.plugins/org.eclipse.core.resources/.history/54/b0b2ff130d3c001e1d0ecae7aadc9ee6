@@ -1,0 +1,25 @@
+package aop_p.webToon;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Round {
+
+	// 원 넓이
+	public int circleRound(int cirround) {
+		return cirround;
+		
+	}
+	
+	// 직사각형 넓이
+	public int rectagleRound(int recround) {
+		return recround;
+		
+	}
+	
+	// 정사각형 넓이
+	public int triRound(int triround) {
+		return triround;
+		
+	}
+}

@@ -1,0 +1,8 @@
+package anno_p.classes;
+
+public class AdultStudent {
+	
+	public void as1(String name) {
+		
+	}
+}

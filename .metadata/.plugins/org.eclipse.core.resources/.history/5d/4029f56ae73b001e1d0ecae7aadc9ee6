@@ -1,0 +1,8 @@
+package aop_p.webToon;
+
+public class Fishing {
+
+	public String fish1(String name, miggi) {
+		
+	}
+}

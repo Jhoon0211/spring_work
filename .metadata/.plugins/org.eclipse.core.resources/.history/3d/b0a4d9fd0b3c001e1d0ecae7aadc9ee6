@@ -1,0 +1,13 @@
+package aop_p.webToon;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Figure {
+
+	public int circle(int r, int pi) {
+		
+		return ;
+	}
+	
+}

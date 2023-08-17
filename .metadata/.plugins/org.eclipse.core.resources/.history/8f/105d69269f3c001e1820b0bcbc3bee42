@@ -1,0 +1,12 @@
+package anno_p.classes;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class AdultStudent {
+	
+	public String as1(int kor, int eng) {
+		System.out.println("국어점수 : " + kor + "영어점수 : " + eng);
+		return null;
+	}
+}

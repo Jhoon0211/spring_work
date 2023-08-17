@@ -1,0 +1,12 @@
+package aop_p.adv;
+
+import java.util.Arrays;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+
+public class ExecAdvice1 {
+
+	void retString() {
+		
+	}
+}

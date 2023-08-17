@@ -1,0 +1,25 @@
+package aop_p.webToon;
+
+import org.aspectj.lang.JoinPoint;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Circle {
+
+	// 원 넓이
+	public int circleArea(int cirarea) {
+		return cirarea;
+		
+	}
+	
+	// 원 둘레
+	public int circleRound(JoinPoint joinPoint) {
+		int r=4;
+		cirround = (int) (r*r*Math.PI); 
+		return cirround;	
+	}
+	
+
+	
+	
+}

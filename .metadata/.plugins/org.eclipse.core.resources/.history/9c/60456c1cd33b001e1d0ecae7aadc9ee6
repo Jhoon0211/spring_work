@@ -1,0 +1,24 @@
+package anno_p.main;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import anno_clothes.AnnoConfig_ootd;
+
+public class Ootd_main {
+
+    public static void main(String[] args) {
+
+        ApplicationContext context =
+                new AnnotationConfigApplicationContext(AnnoConfig_ootd.class);
+
+        AbstractApplicationContext context1 =
+				new ClassPathXmlApplicationContext("ex_xml/clothing.xml");
+       // System.out.println(Arrays.toString(context.getBeanDefinitionNames()));
+
+        // 외부 xml에서 가져옴
+        System.out.println(context.getBean("mountain"));
+        System.out.println(context.getBean("beach"));
+
+    }
+}

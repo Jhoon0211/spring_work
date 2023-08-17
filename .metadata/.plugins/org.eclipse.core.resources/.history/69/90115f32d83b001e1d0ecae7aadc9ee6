@@ -1,0 +1,17 @@
+package aop_p.webToon;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Josuk {
+	
+	public String dog1() {
+		System.out.println("센세이션은 찢찢");
+		return "센세이션";
+	}
+	
+	public String dog1() {
+		System.out.println("센세이션은 찢찢");
+		return "센세이션";
+	}
+}

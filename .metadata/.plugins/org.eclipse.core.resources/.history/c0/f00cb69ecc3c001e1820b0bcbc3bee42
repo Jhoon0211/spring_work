@@ -1,0 +1,28 @@
+package aop_p.adv;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
+
+
+public class AdviceAdvice {
+
+	void beforeee(JoinPoint joinPoint) {
+		System.out.println(">>> beforeee:"+joinPoint.getSignature().toShortString());
+	}
+	//void afterrr(ProceedingJoinPoint joinPoint) {
+	//ProceedingJoinPoint --> around 에서만 사용 가능
+	void afterrr(JoinPoint joinPoint) {
+		System.out.println(">>> afterrr:"+joinPoint.getSignature().toShortString());
+	}
+	
+	// Object qq => 리턴 값으로 처리
+	void returnnn(JoinPoint joinPoint, Object qq) {
+		System.out.println(">>> returnnn:"+joinPoint.getSignature().toShortString()+"=>"+qq);
+	}
+	
+	// 에러를 만들어야 동작 함
+	void errrr(JoinPoint joinPoint) {
+		System.out.println(">>> errrr:"+joinPoint.getSignature().toShortString());
+	}
+	
+}

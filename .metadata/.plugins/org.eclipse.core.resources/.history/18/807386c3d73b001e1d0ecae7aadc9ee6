@@ -1,0 +1,17 @@
+package aop_main;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Aroundmain {
+
+	public static void main(String[] args) {
+		
+		AbstractApplicationContext context = 
+				new ClassPathXmlApplicationContext("aop_xml/around.xml");
+
+		
+		JoSuk jsk = context.getBean("josuk")
+	}
+
+}

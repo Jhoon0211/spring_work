@@ -1,0 +1,50 @@
+package aop_p.classes;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Order {
+	
+	ArrayList<Integer> list = new ArrayList<>();
+	
+	public String soup(String name, int price){
+		this.list.add(price);
+		return name + " " + price + "원";
+	}
+	
+	public String dubrice(String name, int price){
+		this.list.add(price);
+		return name + " " + price + "원";
+	}
+	
+	// 주문 개수 
+	public int orderCount() {
+		int ordcount = 0;
+		for (int i=0; i<list.size(); i++) {
+			ordcount++;
+		}
+		return ordcount + "개";
+	}
+	
+	// 주문 합계
+	public int orderMoney() {
+		int totalPrice = 0;
+		for (int i=0; i<list.indexOf(list); i++) {
+			totalPrice++;
+		}
+		return list.indexOf(list);
+	}
+		
+		/*calc();
+		return totalprice;
+	}
+	
+	void calc(){
+		for (int i = 0; i < array.length; i++) {
+			price++;
+		}
+	}*/
+}

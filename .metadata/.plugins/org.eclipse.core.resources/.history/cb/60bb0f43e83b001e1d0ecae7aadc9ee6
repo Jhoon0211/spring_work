@@ -1,0 +1,12 @@
+package aop_p.webToon;
+
+import java.util.Scanner;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Fishing {
+
+
+		Scanner scan = new Scanner();
+}

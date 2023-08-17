@@ -1,0 +1,15 @@
+package anno_p.classes;
+
+import org.aspectj.lang.JoinPoint;
+import org.springframework.stereotype.Component;
+
+@Component
+public class StudentAdvice {
+	
+	// <aop:before method="qw" pointcut="args(qq,ww)" />
+	void take(JoinPoint joinPoint, int kor, int eng) {
+		System.out.println("국어점수 : " + kor + " 영어점수 : " + eng);
+		System.out.println();
+		}
+
+}

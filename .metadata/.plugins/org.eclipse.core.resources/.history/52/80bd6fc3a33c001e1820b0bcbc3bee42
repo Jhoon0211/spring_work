@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+http://www.springframework.org/schema/context
+https://www.springframework.org/schema/context/spring-context-4.3.xsd
+http://www.springframework.org/schema/aop
+https://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<context:component-scan base-package="aop_p.classes"/>
+	
+	<aop:config>
+		<aop:aspect ref="studentAdvice">
+			<!-- qw메서드에 가서 int qq, String ww 걸어줘야 함 -->
+			<!-- 매개변수의 개수와 타입이 맞아야 들어오게 됨 (overloading) -->
+			<aop:before method="adult" 
+				pointcut="args(kor, eng, tot, avg)" />
+				
+		
+			
+			<!-- Main에 삽입되어있는 빈 중에 int값이 한개인 것을 불러온다 -->
+		
+			
+		</aop:aspect>
+	</aop:config>
+</beans>

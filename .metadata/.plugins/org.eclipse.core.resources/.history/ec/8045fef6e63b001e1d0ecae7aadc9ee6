@@ -1,0 +1,11 @@
+package aop_p.webToon;
+
+import java.util.Scanner;
+
+public class Fishing {
+
+	
+	private void sysout() {
+
+	} 
+}

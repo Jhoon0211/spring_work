@@ -1,0 +1,10 @@
+package aop_p.adv;
+
+import org.aspectj.lang.JoinPoint;
+
+public class ExecAdvice1 {
+
+	void retString(JoinPoint joinPoint) {
+		System.out.println("retString:"+joinPoint.getSignature().toShortString());
+	}
+}

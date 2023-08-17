@@ -1,0 +1,23 @@
+package aop_p.main;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
+
+import aop_p.classes.Order;
+@Component
+public class OrderMain {
+
+	public static void main(String[] args) {
+		AbstractApplicationContext context = 
+				new ClassPathXmlApplicationContext("aop_xml/order.xml");
+		
+		
+		
+		Order ord = context.getBean("order",Order.class);
+
+		System.out.println("JoSuk.dog1() 리턴 값 받아서 처리 : "+ord.soup("된장찌개", 9000));
+
+	}
+
+}

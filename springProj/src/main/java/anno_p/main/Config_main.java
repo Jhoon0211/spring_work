@@ -18,6 +18,8 @@ public class Config_main {
 		System.out.println(Arrays.toString(context.getBeanDefinitionNames()));
 		System.out.println(context.getBean("mtb"));
 		System.out.println(context.getBean("pb"));
+		
+		// 외부 xml에서 가져옴
 		System.out.println(context.getBean("rc1"));
 
 

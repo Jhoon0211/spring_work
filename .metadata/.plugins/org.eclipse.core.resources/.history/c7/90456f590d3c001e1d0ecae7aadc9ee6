@@ -1,0 +1,25 @@
+package aop_p.webToon;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Area {
+
+	// 원 넓이
+	public int circleArea(int cirarea) {
+		return cirarea;
+		
+	}
+	
+	// 직사각형 넓이
+	public int rectagleArea(int recarea) {
+		return recarea;
+		
+	}
+	
+	// 정사각형 넓이
+	public int triArea(int triarea) {
+		return triarea;
+		
+	}
+}

@@ -1,0 +1,10 @@
+package aop_p.adv;
+
+public class AroundAdvice {
+	
+	Object arTest() {
+		Object res = null;
+		
+		return res;
+	}
+}

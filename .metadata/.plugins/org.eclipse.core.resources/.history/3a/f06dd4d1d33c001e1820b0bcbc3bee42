@@ -1,0 +1,12 @@
+package aop_p.classes;
+
+import java.util.Iterator;
+
+public class Order {
+	public int soup(String name, int price){
+		for (int i = 0; i < array.length; i++) {
+			price++;
+		}
+		
+	}
+}

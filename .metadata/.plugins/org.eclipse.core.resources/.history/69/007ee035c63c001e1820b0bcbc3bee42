@@ -1,0 +1,13 @@
+package aop_p.adv;
+
+import org.aspectj.lang.JoinPoint;
+import org.springframework.stereotype.Component;
+
+@Component
+public class AdviceAdvice {
+
+	void beforeee(JoinPoint joinPoint) {
+		System.out.println("retString:"+joinPoint.getSignature().toShortString());
+	}
+
+}

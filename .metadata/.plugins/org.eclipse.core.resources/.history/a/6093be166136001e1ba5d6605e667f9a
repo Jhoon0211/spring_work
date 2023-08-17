@@ -1,9 +1,0 @@
-package di_p.main;
-
-public class DIColl {
-	String nick;
-	int age;
-	
-	int [] arr;
-	
-}

@@ -1,0 +1,25 @@
+package aop_p.main;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import aop_p.webToon.JoSuk;
+import aop_p.webToon.KangBada;
+
+public class AdviceMain {
+
+	public static void main(String[] args) {
+		AbstractApplicationContext context = 
+				new ClassPathXmlApplicationContext("aop_xml/advice.xml");
+		
+		JoSuk jsk = context.getBean("joSuk",JoSuk.class);
+
+		// 리턴 받는 곳
+		System.out.println("리턴값 받는 곳:"+jsk.dog1(12,"아기상어"));
+		System.out.println("---------------");
+		
+		
+		System.out.println("---------------");
+	}
+
+}

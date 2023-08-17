@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+http://www.springframework.org/schema/context
+https://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	
+	<bean name="beach" class="anno_p.Clothes" p:name="바다에가요!"
+	p:top-ref="tp2" p:bottom-ref="bt2" p:shoes-ref="sh2"
+	p:head-ref="hd2" p:eye-ref="ey2"/>
+	
+	<bean name="tp2" class="anno_p.Top" p:name="래쉬가드" p:fabric="기능성 원단" />
+	<bean name="bt2" class="anno_p.Bottom" p:name="수영복" p:fabric="방수 원단" />
+	<bean name="sh2" class="anno_p.Shoes" p:name="오리발" />
+	<bean name="hd2" class="anno_p.HeadWear" p:name="밀짚모자" p:type="시원해요" />
+	<bean name="ey2" class="anno_p.EyeWear" p:name="선글라스" p:type=" UV 차단" />
+	
+	<context:annotation-config/>
+</beans>

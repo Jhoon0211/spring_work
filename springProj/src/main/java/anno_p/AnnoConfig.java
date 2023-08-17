@@ -4,10 +4,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
 
-@ImportResource("anno_xml/autowire.xml")
+//@ImportResource("anno_xml/autowire.xml")
 
 // xml파일이 따로 없어서 스캔코드 입력해주어야 함
-// @ComponentScan(basePackages = "anno_p.com")
+//@ComponentScan(basePackages = "anno_p.com")
 public class AnnoConfig {
 	
 	// 핸들

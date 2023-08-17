@@ -1,0 +1,9 @@
+package aop_p.adv;
+
+
+public class ExecAdvice1 {
+
+	void retString(ProceedingJoinPoint joinPoint) {
+		
+	}
+}

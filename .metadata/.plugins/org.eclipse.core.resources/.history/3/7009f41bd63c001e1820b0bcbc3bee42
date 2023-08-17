@@ -1,0 +1,40 @@
+package aop_p.classes;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Order {
+	
+	ArrayList<Integer> list = new ArrayList<>();
+	
+	public int soup(String name, int price){
+		this.list.add(price);
+		return price;
+	}
+	
+	public int dubrice(String name, int price){
+		this.list.add(price);
+		return price;
+	}
+	
+	public int orderCount() {
+		int totalord = 0;
+		for (int price : list) {
+			
+		}
+		return totalord;
+	}
+		
+		/*calc();
+		return totalprice;
+	}
+	
+	void calc(){
+		for (int i = 0; i < array.length; i++) {
+			price++;
+		}
+	}*/
+}

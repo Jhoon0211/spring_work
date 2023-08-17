@@ -1,0 +1,11 @@
+package aop_main;
+
+public class Snippet {
+	public static void main(String[] args) {
+		System.out.println(context.getBean("wm1"));
+				System.out.println(context.getBean("rc1"));
+				
+				
+	}
+}
+

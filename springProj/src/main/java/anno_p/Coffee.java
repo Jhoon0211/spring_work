@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Coffee {
 	
-	
 	String name;
 	int price, shot;
 	

@@ -1,0 +1,12 @@
+package anno_p.classes;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class AdultStudent {
+	
+	public Object[] as1(int kor, int eng) {
+		
+		return null;
+	}
+}

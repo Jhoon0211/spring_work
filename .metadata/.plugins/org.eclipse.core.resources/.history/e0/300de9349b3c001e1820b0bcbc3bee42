@@ -1,0 +1,9 @@
+package anno_p.classes;
+
+public class AdultStudent {
+	
+	public int papa(int c) {
+		System.out.println("조철왕 : " + c);
+		return 4000;
+	}
+}

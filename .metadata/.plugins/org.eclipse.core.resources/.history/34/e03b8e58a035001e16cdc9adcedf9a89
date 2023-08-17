@@ -1,6 +1,0 @@
-package di_p;
-
-public class PocariBicycle {
-	String wheel, handle, blanket; 
-	
-}
