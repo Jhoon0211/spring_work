@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>attrReg</title>
+</head>
+<form action="joinReg" method="post">
+	<table border="">
+		<tr>
+			<td>아이디</td>
+			<td>[[${joinid}]]</td>
+		</tr>
+		<tr>
+			<td>비밀번호</td>
+			<td>[[${joinpw}]]</td>
+		</tr>
+		<tr>
+			<td>이메일</td>
+			<td>[[${joinemail}]]</td>
+		</tr>
+		<tr>
+			<td>이름</td>
+			<td>[[${joinname}]]</td>
+		</tr>
+		<tr>
+			<td>생년월일</td>
+			<td>[[${joinbirth}]]</td>
+		</tr>
+		<tr>
+			<td>성별</td>
+			<td>[[${joingender}]]</td>
+		</tr>
+		<tr>
+			<td>전화번호</td>
+			<td>[[${joinphone}]]</td>
+		</tr>	
+	</table>
+</form>
+<h2 style="color:red">회원가입 완료!</h2>
+</body>
+</html>

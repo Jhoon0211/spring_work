@@ -1,6 +1,0 @@
-package di_p;
-
-public class Menu {
-	String name, main, side;
-	int price;
-}

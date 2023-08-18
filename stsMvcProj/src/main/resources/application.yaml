@@ -1,0 +1,7 @@
+server : 
+  port : 80
+spring :
+  thymeleaf:
+    prefix : views/ # webapp에 views폴더 만들어서 home.html 생성
+    suffix : .html
+    cache  : false  # cashe는 날린다   

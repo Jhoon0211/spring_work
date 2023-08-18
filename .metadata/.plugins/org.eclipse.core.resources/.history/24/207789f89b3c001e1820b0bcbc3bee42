@@ -1,9 +1,0 @@
-package anno_p.classes;
-
-public class AdultStudent {
-	
-	public String as1(String name, int kor, int eng) {
-		return name;
-		
-	}
-}

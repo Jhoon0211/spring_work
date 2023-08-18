@@ -1,8 +1,0 @@
-package anno_p.classes;
-
-public class AdultStudent {
-	
-	public int papa(String name) {
-		
-	}
-}
