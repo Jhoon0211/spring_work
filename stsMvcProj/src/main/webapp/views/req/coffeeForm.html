@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>request/coffee</h1>
+<form action="coffeeReg" method="post">
+	<table border="">
+		<tr>		
+			<td>커피</td>
+			<td>가격</td>
+			<td>몇잔?</td>
+		</tr>
+		<tr>
+			<td><input type="text" name="ame.name" th:value="아메리카노"/></td>
+			<td><input type="text" name="ame.price" th:value="3000"/></td>
+			<td><input type="text" name="ame.cnt"/></td>
+		</tr>
+		<tr>
+			<td colspan="3" align="center">
+				<input type="submit" value="주문"/>
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

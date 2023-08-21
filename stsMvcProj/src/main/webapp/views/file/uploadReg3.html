@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>file/uploadReg</title>
+</head>
+<body>
+<h1>file/uploadReg</h1>
+<table border="">
+	<tr>
+		<td>id</td>
+		<td th:text="${uploadData.id}"/>
+	</tr>
+	<tr>
+		<td>age</td>
+		<td th:text="${uploadData.age}"/>
+	</tr>
+	<tr>
+		<td>ff1</td>
+		<td th:text="${uploadData.ff1Name}"/>
+		<!-- 처음엔 파일의 메모리 주소명만 나오므로 클래스에서 -->
+		<!-- 메서드 생성하여 호출해야 함 -->
+	</tr>
+	<tr>
+		<td>ff2</td>
+		<td th:text="${uploadData.ff2Name}"/>
+	</tr>
+</table>
+</body>
+</html>

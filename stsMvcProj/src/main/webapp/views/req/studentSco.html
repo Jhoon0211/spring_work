@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>request/studentSco</title>
+</head>
+	<body>
+	<h1>request/studentSco</h1>
+	<h2>성적별 출력</h2>
+		<table border="">
+			<tr>
+				<td>이름</td>
+				<td>반</td>
+				<td>국어</td>
+				<td>영어</td>
+				<td>수학</td>
+				<td>총합</td>
+				<td>평균</td>
+			</tr>
+			<!-- Student 클래스의 studat을 가져온다 -->
+			
+			<tr th:each="sd: ${student.studat}">			
+				<td>[[${sd.stuname}]]</td>
+				<td>[[${sd.ban}]]</td>
+				<td>[[${sd.kor}]]</td>
+				<td>[[${sd.eng}]]</td>
+				<td>[[${sd.mat}]]</td>
+				<td>[[${sd.total}]]</td>
+				<td>[[${sd.avg}]]</td>
+			</tr>
+		</table>		
+	</body>
+</html>

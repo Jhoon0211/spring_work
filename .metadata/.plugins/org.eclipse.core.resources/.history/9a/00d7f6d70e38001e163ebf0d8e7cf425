@@ -1,9 +1,0 @@
-
-public class WashMachine {
-
-}
-
-class Motor{
-	String name;
-	int power;
-}

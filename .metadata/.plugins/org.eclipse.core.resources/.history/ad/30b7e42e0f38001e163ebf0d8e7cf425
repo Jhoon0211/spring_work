@@ -1,9 +1,0 @@
-package anno_p;
-
-public class Snippet {
-	public static void main(String[] args) {
-		package anno_p.main;
-		
-	}
-}
-

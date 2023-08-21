@@ -1,7 +1,0 @@
-package anno_p.com.sub1;
-
-public class Mouse {
-	String name, type;
-	
-	
-}
