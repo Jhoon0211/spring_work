@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body
+
+
+<h2>로그인 하세요</h2>
+<th:block th:if="${pid == aaa}">
+<form action="loginReg" >
+    id<input type="text" name="pid" />
+    pw<input type="text" name="pw" />
+    <input type="submit" value="로그인" />
+</form>
+</th:block>
+</body>
+</html>
