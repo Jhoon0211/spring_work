@@ -41,4 +41,10 @@ public class LoginController {
 		mav.addObject("pw",pw);
 		return mav;
 	}
+	
+	@RequestMapping("loginMain")
+	String loginMain() {
+		System.out.println("로그인폼 접속");
+		return "login/loginMain";
+	}
 }

@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 public class UploadData {
-	String id, ff1Name, ff2Name;
+	String id, ff1Name, ff2Name, msg;
 	int age;
 	MultipartFile ff1, ff2;
 	
