@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<td th:each="md : ${hNav}">
+	<a th:href="|${md.url}|" th:text="${md.txt}">봄</a>
+</td>
+</html>

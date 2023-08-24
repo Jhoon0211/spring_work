@@ -1,8 +1,0 @@
-package aop_p;
-
-public class Josuk {
-	public String dog1() {
-		System.out.println("센세이션은 찢찢");
-		return "센세이션";
-	}
-}

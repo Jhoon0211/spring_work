@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="thyme/inc/total2">
+	
+<head>
+<meta charset="UTF-8">
+<!-- lalal입니다 : 이것으로 출력 -->
+<title>lalala2 입니다</title>
+</head>
+<body>
+</body>
+<!-- !!! 내용 삽입 부 !!! -->
+<!-- 태그하고 내용만 넣으면 됨 -->
+<th:block layout:fragment="seasonbody">
+	<img th:each="mc: ${mainCt}" th:src="|/sn/${mc}|" alt="" />
+</th:block>
+
+</html>
+

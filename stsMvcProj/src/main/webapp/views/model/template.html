@@ -17,14 +17,14 @@
 	<tr>
 		<td width="500px">
 			<table width="100%">
-				<tr align="center">
-					<!-- 이게 반복되는 거임 -->
-					<!-- MenuData의 이름을 md로 설정 -->
-					<td th:each="md : ${hNav}">
-						<a th:href="|?sn=${md.url}|" th:text="${md.txt}">봄</a>
-					</td>
-				</tr>
-			</table>
+	<tr align="center">
+		<!-- 이게 반복되는 거임 -->
+		<!-- MenuData의 이름을 md로 설정 -->
+		<td th:each="md : ${hNav}">
+			<a th:href="|?sn=${md.url}|" th:text="${md.txt}">봄</a>
+		</td>
+	</tr>
+</table>
 		</td>
 	</tr>
 	<tr>

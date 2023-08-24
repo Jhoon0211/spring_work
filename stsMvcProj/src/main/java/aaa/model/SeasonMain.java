@@ -2,6 +2,7 @@ package aaa.model;
 
 import java.util.HashMap;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 @Component

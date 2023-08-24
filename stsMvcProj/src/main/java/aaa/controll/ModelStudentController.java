@@ -11,8 +11,8 @@ import aaa.model.MenuData;
 import aaa.model.SeasonMain;
 import jakarta.annotation.Resource;
 
-@Controller
-@RequestMapping("/model")
+//@Controller
+//@RequestMapping("/model")
 public class ModelStudentController {
 	
 	// 가져와서 mainCt에 넣어줌 ?

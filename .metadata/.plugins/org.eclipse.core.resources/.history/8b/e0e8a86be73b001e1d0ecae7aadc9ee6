@@ -1,9 +1,0 @@
-package aop_p.webToon;
-
-@Component
-public class Fishing {
-
-	public String fish1(String name, miggi) {
-		
-	}
-}

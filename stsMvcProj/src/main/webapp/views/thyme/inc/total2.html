@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<!--lalala 입니다 : 로 출력
+total 입니다 는 출력되지 않음
+-->
+<title>total 입니다</title>
+<style>
+		tr > td > img{
+			margin: 20px;
+			width: 200px;
+			height: 150px;
+	}
+</style>
+</head>
+<body>
+<h2>thymeleaf와 fragment로 season</h2>
+<table border="">
+	<tr>
+		<td width="500px">
+			<table width="100%">
+				<tr align="center">
+					<th:block  th:replace="thyme/inc/seasonheader"/>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<th:block layout:fragment="seasonbody" />
+		</td>
+	</tr>
+</table>
+</body>
+</html>

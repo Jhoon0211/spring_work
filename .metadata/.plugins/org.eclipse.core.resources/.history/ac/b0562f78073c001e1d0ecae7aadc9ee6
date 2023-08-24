@@ -1,9 +1,0 @@
-package aop_p.webToon;
-
-import org.springframework.stereotype.Component;
-
-@Component
-public class KangSan {
-	
-	public void
-}
