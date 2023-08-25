@@ -71,8 +71,8 @@ public class ThymeleafController {
 	@ModelAttribute("mainCt") // == mainCt로 선언했으므로 사용할때도 mainCt
 	Object mainContent(
 			@PathVariable String season) {
-		Object res = provider.getContext().getBean("studentmain");
+		Object res = provider.getContext().getBean("student");
 
-		return sm.getPicture(season);
+		return ((SeasonMain) res).getPicture(season);
 	}
 }

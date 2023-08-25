@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>validForm</title>
+<style>
+	td>div{
+		background-color: #ff0;
+		color:red;		
+	}
+	
+</style>
+</head>
+<body>
+<h2>validForm</h2>
+<form method="post">
+	<table border="" th:object="${kemData}">
+		<tr>
+			<td>이름</td>
+			<td><input type="text" th:field="*{pname}"/>
+			<div th:if="${#fields.hasErrors('pname')}" th:errors="*{pname}" />
+			</td>
+		</tr>
+		<tr>
+			<td>국어</td>
+			<td><input type="number" th:field="*{kor}"/>
+			<div th:if="${#fields.hasErrors('kor')}" th:errors="*{kor}" />
+			</td>
+		</tr>
+		<tr>
+			<td>영어</td>
+			<td><input type="number" th:field="*{eng}"/>
+			<div th:if="${#fields.hasErrors('eng')}" th:errors="*{eng}" />
+			</td>
+		</tr>
+		<tr>
+			<td>수학</td>
+			<td><input type="number" th:field="*{mat}"/>
+			<div th:if="${#fields.hasErrors('mat')}" th:errors="*{mat}" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<input type="submit" value="처리"/>
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

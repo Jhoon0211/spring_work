@@ -16,7 +16,7 @@ public class Person {
 		this.mil = mil;
 	}
 	String pname, gender, id, pw, msg;
-	int age;
+	int age, no;
 	boolean mil, marriage;
 	public Person(String id, String pname, String pw) {
 		super();

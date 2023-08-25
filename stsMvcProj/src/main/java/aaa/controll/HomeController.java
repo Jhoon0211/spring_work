@@ -1,6 +1,7 @@
 package aaa.controll;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -29,4 +30,12 @@ spring :
     cache  : false  # cashe는 날린다  
 
  */
+	@RequestMapping("/admin/{ser}")
+	@ResponseBody
+	String adminGo(@PathVariable String ser) {
+		System.out.println("admin이다");
+
+		return "admin : " + ser + "페이지" ;
+	}
+	
 }
