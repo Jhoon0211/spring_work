@@ -8,6 +8,7 @@ import lombok.Data;
 public class UploadData {
 	String id, ff1Name, ff2Name, msg;
 	int age;
+	
 	MultipartFile ff1, ff2;
 	
 	public String getFf1Name() {

@@ -18,6 +18,7 @@ public class FormController {
 	String form(MemData md) {
 		return "form/form";
 	}
+
 	
 	@GetMapping("link")
 	String link(Model mm) {
