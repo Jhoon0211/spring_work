@@ -7,5 +7,4 @@ public class PageData {
 	
 	String msg, goUrl;
 	
-	
 }

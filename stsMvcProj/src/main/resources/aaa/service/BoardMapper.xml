@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org/DTD Mapper3.0//EN"
 <mapper namespace="aaa.service.BoardMapper"> <!-- BoardMapper의 위치를 알려주어야 함 -->
 	
 	<select id="list" resultType="bDTO"> <!-- BoardDTO에서 설정한 alias명 넣어줌 -->
-		select * from board
+   	 	select * from board order by id desc limit #{start}, #{limit}
 	</select>
 	
 	<select id="detail" resultType="bDTO" parameterType="Integer">
@@ -34,5 +34,8 @@ PUBLIC "-//mybatis.org/DTD Mapper3.0//EN"
 		where id = #{id}
 	</update>
 	
-
+	<select id="totalCnt">
+		select count(*) from board
+	</select>
+	
 </mapper>

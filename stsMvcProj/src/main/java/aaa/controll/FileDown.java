@@ -29,76 +29,45 @@ import lombok.Data;
 @Component
 public class FileDown {
 
-	String upfile(BoardDTO dto, MultipartFile mmff) {
-		System.out.println("OriginalFilename():"+dto.getMmff().getOriginalFilename());
-		fileSave(dto.getMmff());
-		
-		return "board/list";
-	}
 	
+
 	// 다운로드 - 사용하고자 하는 페이지에 fileSave() 함수 사용
 	// 1) 파일이 존재하지 않으면 파일저장 하지 않을 것
 	// 2) 파일명이 중복되면 aaa1, aaa2
 	// 3) 이미지 파일만 업로드 할 수 있어야 함
 	// 파일이 있는지 확인, 존재한다면
-	void fileSave(MultipartFile mmff) {
-		// 경로 설정
-		String path = "C:\\green_project\\spring_work\\stsMvcProj\\src\\main\\webapp\\up";
-		
-		// 저장 - 저장된 파일의 이름을 가져옴
-		File ff = new File(path+"\\"+mmff.getOriginalFilename());
-		
-		try {
-			FileOutputStream fos = new FileOutputStream(ff);
-			
-			// 파일 저장
-			System.out.println(mmff.getOriginalFilename());
-			System.out.println(mmff.isEmpty());
-			System.out.println(ff.exists());
-			fos.write(mmff.getBytes());
-			fos.close();
-		// 예외처리 - 만약 파일이 없다면
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-	}
 	
-	void fileSave2(PageData ud, BoardDTO dto, MultipartFile mmff) {
-		ud.setMsg(null);
+	void fileSave(BoardDTO dto) {
+		
 		//파일 업로드 유무 확인
 		if(dto.getMmff().isEmpty()) {
-			
-			ud.setMsg("파일이 비었어");
 			return;
 		}
 		
-		String path = "D:\\public\\green\\2023_07\\study\\spring_work\\stsMvcProj\\src\\main\\webapp\\up";
+		String path = "C:\\green_project\\spring_work\\stsMvcProj\\src\\main\\webapp\\up";
 		
-		
+		// 점 처리
 		int dot = dto.getMmff().getOriginalFilename().lastIndexOf(".");
+		// 
 		String fDomain = dto.getMmff().getOriginalFilename().substring(0, dot);
 		String ext = dto.getMmff().getOriginalFilename().substring(dot);
-		
-		//이미지인지 확인
-		if(!Pattern.matches("[.](bmp|jpg|gif|png|jpeg)", ext.toLowerCase())) {
-			
-			ud.setMsg("이미지 파일이 아님");
-			return;
-		}
+
 		
 		dto.setUpfile(fDomain+ext); 
-		File mmff1 = new File(path+"\\"+dto.getUpfile());
+		File mmff = new File(path+"\\"+dto.getUpfile());
 		int cnt = 1;
-		while(mmff1.exists()) {
+		
+		while(mmff.exists()) {
 			 
 			dto.setUpfile(fDomain+"_"+cnt+ext);
-			mmff1 = new File(path+"\\"+dto.getUpfile());
+			mmff = new File(path+"\\"+dto.getUpfile());
 			cnt++;
 		}
 		
+		
+		
 		try {
-			FileOutputStream fos = new FileOutputStream(mmff1);
+			FileOutputStream fos = new FileOutputStream(mmff);
 			
 			fos.write(dto.getMmff().getBytes());
 			
@@ -117,7 +86,7 @@ public class FileDown {
 			HttpServletResponse response) {
 		
 		String path = request.getServletContext().getRealPath("up");
-		path = "D:\\public\\green\\2023_07\\study\\spring_work\\stsMvcProj\\src\\main\\webapp\\up";
+		path = "C:\\green_project\\spring_work\\stsMvcProj\\src\\main\\webapp\\up";
 		
 		
 		try {
@@ -150,9 +119,5 @@ public class FileDown {
 		}
 	}
 
-	public void fileSave(String setUpfile) {
-		// TODO Auto-generated method stub
-		
-	}
 }
 

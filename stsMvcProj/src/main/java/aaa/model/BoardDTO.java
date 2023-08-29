@@ -19,17 +19,4 @@ public class BoardDTO {
 	String title, pname, pw, upfile, content;
 	Date regDate;
 	
-	public String getMmffName() {
-		return mmff.getOriginalFilename();
-	}
-
-	public String setUpfile(MultipartFile mmff) {
-		// TODO Auto-generated method stub
-		return mmff.getName();
-	}
-
-	public void setUpfile(String string) {
-		// TODO Auto-generated method stub
-		
-	}
 }

@@ -8,12 +8,13 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.web.multipart.MultipartFile;
 
 import aaa.model.BoardDTO;
+import aaa.model.Paging;
 
 @Mapper
 public interface BoardMapper {
 
 	// 리스트
-	List<BoardDTO> list();
+	List<BoardDTO> list(Paging paging);
 	
 	// 디테일 + 조회수 증가
 	BoardDTO detail(int id);
@@ -30,5 +31,6 @@ public interface BoardMapper {
 	// 조회수 증가
 	void updateCount(int id);
 
-	
+	// 게시글 전체 불러오기
+	int totalCnt();
 }

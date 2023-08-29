@@ -7,13 +7,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import aaa.model.BoardDTO;
 import aaa.model.PageData;
+import aaa.model.Paging;
 import aaa.service.BoardMapper;
 import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("/board")
@@ -27,19 +31,33 @@ public class BoardController {
 
 	// list
 	@RequestMapping("list")
-	String list(Model mm) {
-		List<BoardDTO>data = mapper.list();
-		System.out.println(data);
+	String list(Model mm, HttpServletRequest request, @RequestParam(defaultValue = "1") int page) {
+		// 페이징 처리
+		Paging paging = new Paging();
+		
+		// 게시글 총 개수 가져오기
+		paging.setTotal(mapper.totalCnt());
+		paging.setPage(page);
+		paging.calc(); // *
+
+		System.out.println(paging);
+		
+		List<BoardDTO>data = mapper.list(paging);
+
+		//System.out.println(data);
 		// 메인데이터를 모델에 담아서 list로보낸다
 		mm.addAttribute("mainData", data);
+		mm.addAttribute("paging", paging);
+
 		return "board/list";
 	}
 	
 	// 상세보기
 	@RequestMapping("detail/{id}")
-	String detail(Model mm, @PathVariable int id) {
+	String detail(Model mm, @PathVariable int id) { // id가 @PathVariable 잡아줌 
 		// 조회수 증가
 		mapper.updateCount(id);
+		
 		mm.addAttribute("dto", mapper.detail(id));
 		return "board/detail";
 	}
@@ -52,18 +70,20 @@ public class BoardController {
 
 	// 글쓰기 제출
 	@PostMapping("insert")
-	String insertReg(BoardDTO dto, PageData pd,
-			MultipartFile mmff, Model mm) {
-	    dto.setMmff(mmff);
-		mapper.insseerr(dto);
+	String insertReg(BoardDTO dto, PageData pd, Model mm) {
+	    // dto.setMmff(mmff); 애초에 dto 안에 mmff가 있기때문에 또 mmff를 가져올 필요가 없었음
 		// 파일 저장
-	    filecon.fileSave(dto.setUpfile(mmff));
+	    filecon.fileSave(dto);
+	    System.out.println("insseerr" + dto);
+	    // 글쓰기
+	    mapper.insseerr(dto);
 		// 메시지 띄워주고
 		pd.setMsg("작성되었습니다.");
 		// list로 이동
 		pd.setGoUrl("list");
-		System.out.println(dto);
-		mm.addAttribute("upfile", mmff.getOriginalFilename());
+		//System.out.println("파일명 : " + dto.getMmff().getOriginalFilename());
+		//System.out.println(mmff.getOriginalFilename());
+		//mm.addAttribute("upfile", mmff.getOriginalFilename());
 		return "board/alert";
 	}
 	
@@ -92,7 +112,6 @@ public class BoardController {
 			pd.setMsg("삭제되었습니다");
 			pd.setGoUrl("/board/list");
 		}
-		
 		return "board/alert";
 	}
 	

@@ -71,9 +71,6 @@ public class FileController {
 	}
 	
 	
-	
-	
-	
 	@RequestMapping(value="upload3")
 	String fileReg3(UploadData ud, HttpServletRequest request) {
 		
@@ -158,8 +155,6 @@ public class FileController {
 		}
 		
 	}
-	
-	
 	
 	@RequestMapping("download")
 	void download(
