@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org/DTD Mapper3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="aaa.service.MybatisMapper"> <!-- BoardMapper의 위치를 알려주어야 함 -->
+	
+	<select id="list" resultType="bDTO"> <!-- BoardDTO에서 설정한 alias명 넣어줌 -->
+   	 	select * from board order by gid desc, seq
+	</select>
+	
+	<!-- 다중검색 -->
+	<!-- mybatis/listSch 이렇게만 해도 전체 출력 되니까-->
+	<select id="listSch" resultType="bDTO" parameterType="bDTO">
+   	 	select * from board
+   	 	<!-- 검색을 안하면 전체가 다 나오게 처리 -->
+   	 	<where>
+	   	 	<if test="title!=null">
+	   	 		title like concat('%', #{title}, '%')
+	   	 	</if>
+	   	 	<!-- 근데 여기서 title을 빼고 pname만 검색하면 에러가 남 -->
+	   	 	<!-- 왜냐면 where가 아니고 and만 받아서 그럼 그.래.서 사용하는 것이 -->
+	   	 	<!-- where절로 if를 감싸서 태그로 처리한다, 그리고 퀴리 안에 where는 지워줌 -->
+	   	 	<if test="pname!=null">
+	   	 		and pname like concat('%', #{pname}, '%')
+	   	 	</if>
+   	 	</where>
+	</select>
+	
+	<!-- 등급 처리 -->
+	<select id="cntSch" resultType="bDTO" parameterType="bDTO">
+   	 	select * from board
+   	 	<where>
+	   	 	<if test="grade!=null">
+	   	 		<choose>
+	   	 			<when test="grade == 'high'">
+	   	 				cnt > 10
+	   	 			</when>
+	   	 			<when test="grade == 'middle'">
+	   	 				cnt > 5 and cnt &lt;= 10
+	   	 			</when>
+	   	 			<otherwise>
+	   	 				cnt &lt; = 5 
+	   	 			</otherwise>
+	   	 		</choose>
+	   	 	</if>
+   	 	</where>
+	</select>
+	
+	<select id="detail" resultType="bDTO" parameterType="Integer">
+		select * from board where id = #{id}
+	</select>
+
+	<insert id="insseerr"  parameterType="bDTO">
+		insert into board (title, pname, pw, content, upfile, reg_date, cnt, seq, lev)
+		values
+		(#{title}, #{pname}, #{pw}, #{content}, #{upfile}, sysdate(),0,0,0)
+	</insert>
+	
+	<delete id="delettt"  parameterType="bDTO">
+		delete from board where id = #{id} and pw = #{pw}
+	</delete>
+	
+	<update id="modifffy" parameterType="bDTO">
+		update board set 
+		pname = #{pname}, content= #{content}, title= #{title}, upfile = #{upfile}
+		where id = #{id} and pw= #{pw}
+	</update>
+	
+	<update id="updateCount">
+		update board set cnt = cnt + 1
+		where id = #{id}
+	</update>
+	
+	<select id="totalCnt">
+		select count(*) from board
+	</select>
+	
+	<update id="fileDelete" parameterType="bDTO">
+		update board set upfile = null where id = #{id} and pw = #{pw}
+	</update>
+	
+	<select id="idPwChk" parameterType="bDTO" resultType="Integer">
+		select * from board where id = #{id} and pw = #{pw}
+	</select>
+</mapper>

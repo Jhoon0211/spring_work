@@ -3,13 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <title>board/modifyForm</title>
+<script>
+	function fileDelete(){
+		// 컨트롤러의 fileDelete로 가라
+		frm.action = "/board/fileDelete"
+		// 이게 있어야 파일삭제 누르면 fileDelete 메서드 실행
+		frm.submit()
+	}
+</script>
 </head>
 <body>
 <h2>board/modifyForm</h2>
-<form method="post" enctype="multipart/form-data" th:object="${dto}">
+<form name="frm" method="post" enctype="multipart/form-data" th:object="${dto}">
 	<input type="hidden" th:field="*{id}"/>
 	<table border="">
-		
 		<tr>
 			<td>제목</td>
 			<td><input type="text" th:field="*{title}"/></td>
@@ -24,7 +31,13 @@
 		</tr>
 		<tr>
 			<td>파일</td>
-			<td><input type="file" th:field="*{mmff}"/></td>
+			<td><!-- 만약 기존의 파일이 있다면 -->
+				<th:block th:if="${dto.upfile != null}">
+					<input type="text" th:field="*{upfile}" readonly />
+					<input type="button" onclick="fileDelete()" value="파일삭제"/>
+				</th:block>
+				<input th:if="${dto.upfile == null}" type="file" th:field="*{mmff}" />
+			</td>
 		</tr>
 		<tr>
 			<td>내용</td>

@@ -17,7 +17,7 @@
 			<td>조회수</td>
 		</tr>
 		<tr th:each="dto, dtoStat : ${mainData}" align="center">
-			<td th:text="${dtoStat.count}" />
+			<td th:text="${dto.id}" />
 			<td width="500px;" align="left">
 				<a th:href="|detail/${dto.id}|" th:text="${dto.title}"></a>
 			</td>
@@ -28,18 +28,14 @@
 		<!--페이지처리-->
 		<tr>
 		    <td colspan="5" align="center">
-		        <a th:if="${paging.pageStart > 1}" th:href="@{|?page=${paging.pageStart-1}|}">[이전]</a>
-		        <a th:if="${paging.page > 1}" th:href="@{|?page=${paging.page-1}|}">&lt;</a>
-		
+		        <a th:if="${paging.pageStart > 1}" th:href="@{|?page=${paging.pageStart-1}|}">[이전]</a>		
 		        <span th:each="p : ${#numbers.sequence(paging.pageStart, paging.pageEnd)}">
 					<!-- 헷갈리니까 내가 선택한 페이지면 빨갛게 처리하겠다 이거다 -->
 		            <a th:if="${paging.page == p}">
-		                <span style="font-size: 16px; color: red;">[[${p}]]</span>
+		                [<span style="color:blue" th:text="${p}"></span>]
 		            </a>
 		            <a th:unless="${paging.page == p}" th:href="@{|?page=${p}|}">[[${p}]]</a>
 		        </span>
-		
-		        <a th:if="${paging.page < paging.pageTotal}" th:href="@{|?page=${paging.page+1}|}">&gt;</a>
 		        <a th:if="${paging.pageEnd < paging.pageTotal}" th:href="@{|?page=${paging.pageEnd+1}|}">[다음]</a>
 		    </td>
 		</tr>

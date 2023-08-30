@@ -33,4 +33,10 @@ public interface BoardMapper {
 
 	// 게시글 전체 불러오기
 	int totalCnt();
+	
+	// 파일 삭제
+	int fileDelete(BoardDTO dto);
+	
+	// 아이디 비밀번호 확인 (수정시)
+	int idPwChk(BoardDTO dto);
 }

@@ -27,9 +27,15 @@
 			<td>조회수</td>
 			<td th:text="${dto.cnt}"/>
 		</tr>
-		<tr>
+		<tr th:if="${dto.img != null}">
 			<td>파일</td>
-			<td th:text="${dto.upfile}"/>
+			<td>
+				<!-- 만약 이미지이면 이미지를 표시하고 -->
+				<img th:if="${dto.img}" th:src="|/up/${dto.upfile}|"/>
+				<!-- 이미지가 아니면 파일명 표시 -->
+				<a th:unless="${dto.img}" th:text="${dto.upfile}"
+				   th:href="|/board/download/${dto.upfile}|" />
+			</td>
 		</tr>
 		<tr>
 			<td>내용</td>

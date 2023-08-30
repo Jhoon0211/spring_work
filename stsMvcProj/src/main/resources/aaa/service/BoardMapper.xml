@@ -38,4 +38,11 @@ PUBLIC "-//mybatis.org/DTD Mapper3.0//EN"
 		select count(*) from board
 	</select>
 	
+	<update id="fileDelete" parameterType="bDTO">
+		update board set upfile = null where id = #{id} and pw = #{pw}
+	</update>
+	
+	<select id="idPwChk" parameterType="bDTO" resultType="Integer">
+		select * from board where id = #{id} and pw = #{pw}
+	</select>
 </mapper>

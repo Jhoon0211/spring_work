@@ -37,15 +37,17 @@ public class FileDown {
 	// 3) 이미지 파일만 업로드 할 수 있어야 함
 	// 파일이 있는지 확인, 존재한다면
 	
-	void fileSave(BoardDTO dto) {
+	void fileSave(BoardDTO dto, HttpServletRequest request) {
 		
 		//파일 업로드 유무 확인
 		if(dto.getMmff().isEmpty()) {
 			return;
 		}
 		
-		String path = "C:\\green_project\\spring_work\\stsMvcProj\\src\\main\\webapp\\up";
-		
+		String path = request.getServletContext().getRealPath("up");
+		// 이건 가상서버이다, 배포 시에는 realPath로 가져온다
+		path = "C:\\green_project\\spring_work\\stsMvcProj\\src\\main\\webapp\\up";
+
 		// 점 처리
 		int dot = dto.getMmff().getOriginalFilename().lastIndexOf(".");
 		// 
@@ -80,42 +82,12 @@ public class FileDown {
 	}
 	
 	
-	void download(
-			String ff, 
-			HttpServletRequest request,
-			HttpServletResponse response) {
-		
-		String path = request.getServletContext().getRealPath("up");
-		path = "C:\\green_project\\spring_work\\stsMvcProj\\src\\main\\webapp\\up";
-		
-		
-		try {
-			FileInputStream fis = new FileInputStream(path+"\\"+ff);
-			String encFName = URLEncoder.encode(ff,"utf-8");
-			System.out.println(ff+"->"+encFName);
-			response.setHeader("Content-Disposition", "attachment;filename="+encFName);
+	void fileDeleteModule(BoardDTO delDTO, HttpServletRequest request) {
+		if(delDTO.getUpfile()!=null) {
+			String path = request.getServletContext().getRealPath("up");
+			path = "C:\\green_project\\spring_work\\stsMvcProj\\src\\main\\webapp\\up";
 			
-			ServletOutputStream sos = response.getOutputStream();
-			
-			byte [] buf = new byte[1024];
-			
-			//int cnt = 0;
-			while(fis.available()>0) { //읽을 내용이 남아 있다면
-				int len = fis.read(buf);  //읽어서 -> buf 에 넣음
-											//len : 넣은 byte 길이
-				
-				sos.write(buf, 0, len); //보낸다 :  buf의 0부터 len 만큼
-				
-				//cnt ++;
-				//System.out.println(cnt+":"+len);
-			}
-			
-			sos.close();
-			fis.close();
-			
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			new File(path+"\\"+delDTO.getUpfile()).delete();
 		}
 	}
 

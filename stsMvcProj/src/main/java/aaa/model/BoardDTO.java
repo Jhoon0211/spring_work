@@ -1,6 +1,7 @@
 package aaa.model;
 
 import java.sql.Date;
+import java.util.regex.Pattern;
 
 import org.apache.ibatis.type.Alias;
 import org.springframework.web.multipart.MultipartFile;
@@ -19,4 +20,20 @@ public class BoardDTO {
 	String title, pname, pw, upfile, content;
 	Date regDate;
 	
+	// Mybatis 검색기능 하면서 추가한거임 board랑 연관 X
+	String grade;
+	
+	public String getUpfile() {
+		if(upfile == null || upfile.trim().equals("") ||  upfile.trim().equals("null") ) {
+			upfile = null;
+		}
+		return upfile;
+	}
+	
+	public boolean isImg() {
+		if(getUpfile()==null) {
+			return false;
+		}
+		return Pattern.matches(".{1,}[.](bmp|png|gif|jpg|jpeg)", upfile.toLowerCase());
+	}
 }
