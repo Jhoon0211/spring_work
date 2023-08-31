@@ -9,12 +9,10 @@ PUBLIC "-//mybatis.org/DTD Mapper3.0//EN"
    	 	select * from board order by gid desc, seq
 	</select>
 	
-	<!-- 다중검색 -->
-	<!-- mybatis/listSch 이렇게만 해도 전체 출력 되니까-->
-	<select id="listSch" resultType="bDTO" parameterType="bDTO">
-   	 	select * from board
-   	 	<!-- 검색을 안하면 전체가 다 나오게 처리 -->
-   	 	<where>
+	<!-- include -->
+	<sql id="wh1">
+		<where>
+	   	 	<!-- 검색을 안하면 전체가 다 나오게 처리 -->
 	   	 	<if test="title!=null">
 	   	 		title like concat('%', #{title}, '%')
 	   	 	</if>
@@ -25,6 +23,14 @@ PUBLIC "-//mybatis.org/DTD Mapper3.0//EN"
 	   	 		and pname like concat('%', #{pname}, '%')
 	   	 	</if>
    	 	</where>
+	</sql>
+	
+	<!-- 다중검색 -->
+	<!-- mybatis/listSch 이렇게만 해도 전체 출력 되니까-->
+	<select id="listSch" resultType="bDTO" parameterType="bDTO">
+   	 	select * from board
+		<!-- 위에 where절을 include -->
+   	 	<include refid="wh1" />
 	</select>
 	
 	<!-- 등급 처리 -->
@@ -47,40 +53,52 @@ PUBLIC "-//mybatis.org/DTD Mapper3.0//EN"
    	 	</where>
 	</select>
 	
-	<select id="detail" resultType="bDTO" parameterType="Integer">
-		select * from board where id = #{id}
-	</select>
-
-	<insert id="insseerr"  parameterType="bDTO">
-		insert into board (title, pname, pw, content, upfile, reg_date, cnt, seq, lev)
+	<!-- 형식을 맞춰서 for문 속에 담아 한꺼번에 묶어서 insert into 하는 것 -->
+	<insert id="insseerrList"  parameterType="java.util.List">
+		insert into board (title, pname, pw, content, reg_date, cnt, seq, lev, id, gid)
 		values
-		(#{title}, #{pname}, #{pw}, #{content}, #{upfile}, sysdate(),0,0,0)
+		<foreach collection="list" item="dto" separator=" , " index="i">
+		(#{dto.title}, #{dto.pname}, #{dto.pw}, #{dto.content}, sysdate(),0,0,0,
+		200+#{i}, 200+#{i})
+		</foreach>
 	</insert>
 	
+	<!-- 형식을 맞춰서 for문 속에 담아 한꺼번에 묶어서 insert into 하는 것 -->
+	<insert id="insseerrDTOs"  parameterType="dtos">
+		insert into board (title, pname, pw, content, reg_date, cnt, seq, lev)
+		values
+		<!-- #{dd.title}, #{dd.pname}, #{dd.pw}는 각자의 것이지만 -->
+		<!-- #{ct}, sysdate(),#{no},0,0 는 같은것으로 들어감 -> 왜? dtos에서 임의로 설정했으니 -->
+		<foreach collection="arr" item="dd" separator=" , ">
+		(#{dd.title}, #{dd.pname}, #{dd.pw}, #{ct}, sysdate(), #{no},0,0)
+		</foreach>
+	</insert>
+	
+	<!-- 여러개의 매개변수를 처리시 xml에서는 매개변수 이름으로 접근 id, pw -->
+	<!-- 쿼리에서 자료형을 굳이 정하지 않은것임 -->
 	<delete id="delettt"  parameterType="bDTO">
 		delete from board where id = #{id} and pw = #{pw}
 	</delete>
 	
-	<update id="modifffy" parameterType="bDTO">
+	<!-- 여러개의 매개변수를 이번엔 map으로 묶어서 key, value로 처리 -->
+	<update id="modifffy" parameterType="map">
 		update board set 
-		pname = #{pname}, content= #{content}, title= #{title}, upfile = #{upfile}
+		pname = #{pname}, content= #{content}, title= #{title}
 		where id = #{id} and pw= #{pw}
 	</update>
 	
-	<update id="updateCount">
-		update board set cnt = cnt + 1
-		where id = #{id}
-	</update>
+	<insert id="insseerr"  parameterType="bDTO">
+		<selectKey keyProperty="id" resultType="Integer" order="BEFORE">
+			select max(id)+1 from board
+		</selectKey>
+		
+		insert into board (title, pname, pw, content, upfile, reg_date, cnt, seq, lev, gid, id)
+		values
+		(#{title},#{pname},#{pw},#{content},#{upfile}, sysdate(),0,0,0, #{id}, #{id})
+	</insert>
 	
-	<select id="totalCnt">
-		select count(*) from board
-	</select>
-	
-	<update id="fileDelete" parameterType="bDTO">
-		update board set upfile = null where id = #{id} and pw = #{pw}
-	</update>
-	
-	<select id="idPwChk" parameterType="bDTO" resultType="Integer">
-		select * from board where id = #{id} and pw = #{pw}
-	</select>
+	<!-- bb는 별칭 -->
+	<sql id="max_1">
+		(select max(id)+1 from board bb)
+	</sql>
 </mapper>

@@ -36,4 +36,14 @@ public class BoardDTO {
 		}
 		return Pattern.matches(".{1,}[.](bmp|png|gif|jpg|jpeg)", upfile.toLowerCase());
 	}
+
+	public BoardDTO(String title, String pname, String pw, String content) {
+		super();
+		this.title = title;
+		this.pname = pname;
+		this.pw = pw;
+		this.content = content;
+	}
+	
+	
 }
